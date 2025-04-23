@@ -6,36 +6,36 @@
 typedef struct estrutura Estrutura;
 
 /**
- * Creates a new empty queue structure
- * @return Pointer to new queue or NULL if allocation failed
+ * Cria uma nova fila 
+ * @return ponteiro ou NULL se a alocação de memória falhar
  */
 Estrutura* create();
 
 /**
- * Inserts a request at the end of the queue
- * @param e The queue structure
- * @param r The request to insert
- * @return 1 on success, 0 on failure
+ * Insere a requisição no fim da fila
+ * @param e Estrutura da fila
+ * @param r Requisição para inserir
+ * @return 1 sucesso, 0 falha
  */
 int inserir(Estrutura* e, Requisicao* r);
 
 /**
- * Removes and returns the first request from the queue
- * @param e The queue structure
- * @return Pointer to removed request or NULL if queue is empty
+ * Remove e returna a primeira requisição da fila
+ * @param e Estrutura da fila
+ * @return Ponteiro ou NULL se a fila estiver vazia
  */
 Requisicao* remover(Estrutura* e);
 
 /**
- * Returns the current number of requests in the queue
- * @param e The queue structure
- * @return Number of requests in queue or -1 if e is NULL
+ * Retorna o número de requisições na fila 
+ * @param e Estrutura da fila
+ * @return Número de requisiçoes na fila, retorna -1 em caso de erro ou NULL
  */
 int get_size(Estrutura* e);
 
 /**
- * Frees all memory used by the queue structure and its elements
- * @param e The queue structure to destroy
+ * libera memória usada na estrutura da fila e seus elementos
+ * @param e Destrói a fila
  */
 void destroy_queue(Estrutura* e);
 

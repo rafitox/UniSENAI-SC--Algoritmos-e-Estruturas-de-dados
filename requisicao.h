@@ -4,19 +4,19 @@
 
 typedef struct requisicao Requisicao;
 
-// Creates a new request with the given name, inscription number, and procedure
+// Cria nova requisição com o nome, inscricao e procedimento
 Requisicao* cria_requisicao(char* nome, int inscricao, char* procedimento);
 
-// Returns the name of the request
+// Retorna o nome
 char* get_nome(Requisicao* r);
 
-// Returns the inscription number of the request
+// Retorna o número de inscrição da requisição
 int get_inscricao(Requisicao* r);
 
-// Returns the procedure of the request
+// Retorna o procedimento da requisição
 char* get_procedimento(Requisicao* r);
 
-// Frees memory allocated for a request
+// libera a memória alocada na requisição
 void libera(Requisicao* r);
 
 #endif

@@ -7,9 +7,9 @@
 #define MAX_PROC_LEN 10
 
 struct requisicao {
-    char nome_paciente[MAX_NOME_LEN + 1];  // 40 chars + null terminator
+    char nome_paciente[MAX_NOME_LEN + 1];  // 40 chars + null 
     int codigo_inscricao;
-    char codigo_procedimento[MAX_PROC_LEN + 1];  // 10 chars + null terminator
+    char codigo_procedimento[MAX_PROC_LEN + 1];  // 10 chars + null
 };
 
 Requisicao* cria_requisicao(char* nome, int inscricao, char* procedimento) {
@@ -19,11 +19,11 @@ Requisicao* cria_requisicao(char* nome, int inscricao, char* procedimento) {
     
     Requisicao* req = (Requisicao*)malloc(sizeof(Requisicao));
     if (req == NULL) {
-        fprintf(stderr, "Memory allocation failed for Requisicao\n");
+        fprintf(stderr, "Falha ao alocar memória\n");
         return NULL;
     }
     
-    // Safe string copy with explicit null termination
+    // cópia segura da string
     strncpy(req->nome_paciente, nome, MAX_NOME_LEN);
     req->nome_paciente[MAX_NOME_LEN] = '\0';
     
@@ -44,7 +44,7 @@ char* get_nome(Requisicao* r) {
 
 int get_inscricao(Requisicao* r) {
     if (r == NULL) {
-        return -1;  // Error indicator
+        return -1;  // Erro
     }
     return r->codigo_inscricao;
 }
