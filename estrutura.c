@@ -16,7 +16,7 @@ struct estrutura {
 Estrutura* create() {
     Estrutura* e = (Estrutura*)malloc(sizeof(Estrutura));
     if (e == NULL) {
-        fprintf(stderr, "Memory allocation failed for Estrutura\n");
+        fprintf(stderr, "Falha ao alocar memória em Estrutura\n");
         return NULL;
     }
     e->front = NULL;
@@ -32,7 +32,7 @@ int inserir(Estrutura* e, Requisicao* r) {
 
     Node* newNode = (Node*)malloc(sizeof(Node));
     if (newNode == NULL) {
-        fprintf(stderr, "Memory allocation failed for new Node\n");
+        fprintf(stderr, "Falha ao alocar memória\n");
         return 0; // Failed
     }
     
@@ -69,7 +69,7 @@ Requisicao* remover(Estrutura* e) {
 
 int get_size(Estrutura* e) {
     if (e == NULL) {
-        return -1; // Error indicator
+        return -1; // Error
     }
     return e->size;
 }
@@ -83,7 +83,7 @@ void destroy_queue(Estrutura* e) {
         Node* temp = e->front;
         e->front = e->front->next;
         
-        // Free the requisicao if it hasn't been freed yet
+        // Libera a memória da requisição
         if (temp->requisicao != NULL) {
             libera(temp->requisicao);
         }
